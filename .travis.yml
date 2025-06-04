@@ -1,14 +1,41 @@
-#test
 os: linux
 language: generic
 dist: focal
 
-vm:
-  create:
-    name: 0406-image4
-
-script:
-  - echo "Creating custom file"
-  - sudo mkdir /my-custom-dir
-  - echo "Test custom image!" | sudo tee /my-custom-dir/my_custom_file.txt
-  - sudo cat /my-custom-dir/my_custom_file.txt
+jobs:
+  include:
+    - stage: "Tests"
+      name: "Create custom image 1"
+      vm:
+        create:
+          name: 0406-image5
+      script:
+        - echo "Running Job 1"
+    - stage: "Tests"
+      name: "Create custom image 2"
+      vm:
+        create:
+          name: 0406-image6
+      script:
+        - echo "Running Job 2"
+    - stage: "Tests"
+      name: "Create custom image 3"
+      vm:
+        create:
+          name: 0406-image7
+      script:
+        - echo "Running Job 3"
+    - stage: "Tests"
+      name: "Create custom image 4"
+      vm:
+        create:
+          name: 0406-image8
+      script:
+        - echo "Running Job 4"
+    - stage: "Tests"
+      name: "Create custom image 5"
+      vm:
+        create:
+          name: 0406-image9
+      script:
+        - echo "Running Job 5"
