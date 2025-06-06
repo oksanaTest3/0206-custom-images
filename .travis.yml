@@ -4,7 +4,7 @@ dist: focal
 
 vm:
   create:
-    name: 0506-image
+    name: 0606-image
 
 script:
   - echo "Creating custom file"
